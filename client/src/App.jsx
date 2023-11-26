@@ -1,9 +1,10 @@
 import "./App.css";
+import axios from "axios";
+import RegisterAndLoginForm from "./RegisterAndLoginForm";
 
 function App() {
-
-
-  return <div className="bg-red-500">test</div>;
+  axios.defaults.baseURL = "http://localhost:4000";
+  return <RegisterAndLoginForm />;
 }
 
 export default App;
