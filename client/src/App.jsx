@@ -1,10 +1,18 @@
 import "./App.css";
 import axios from "axios";
-import RegisterAndLoginForm from "./RegisterAndLoginForm";
+// import RegisterAndLoginForm from "./RegisterAndLoginForm";
+import { UserContextProvider } from "./UserContext";
+
+import Routes from "./Routes";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:4000";
-  return <RegisterAndLoginForm />;
+  axios.defaults.withCredentials = true;
+  return (
+    <UserContextProvider>
+      <Routes />
+    </UserContextProvider>
+  );
 }
 
 export default App;
